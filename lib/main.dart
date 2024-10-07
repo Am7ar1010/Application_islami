@@ -1,3 +1,4 @@
+import 'package:application_testing/ui/teps/quran%20tep/sura_details.dart';
 import 'package:flutter/material.dart';
 
 import 'core/splash_screen.dart';
@@ -20,6 +21,7 @@ class IslamiApplication extends StatelessWidget {
       routes: {
         SplashScreen.routName: (_) => const SplashScreen(),
         HomeScreen.routName: (_) => const HomeScreen(),
+        SuraDetails.routName: (_) => SuraDetails()
       },
     );
   }
