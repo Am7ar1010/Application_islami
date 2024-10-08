@@ -2,6 +2,7 @@ import 'package:application_testing/ui/teps/quran%20tep/items_suraName.dart';
 import 'package:application_testing/ui/teps/quran%20tep/sura_Items.dart';
 import 'package:application_testing/ui/teps/quran%20tep/sura_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranView extends StatelessWidget {
   const QuranView({super.key});
@@ -21,7 +22,7 @@ class QuranView extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                "رقم السروة ",
+                AppLocalizations.of(context)!.versionNumber,
                 style: theme.textTheme.titleMedium,
                 textAlign: TextAlign.center,
               ),
@@ -29,7 +30,7 @@ class QuranView extends StatelessWidget {
             const SizedBox(height: 50, child: VerticalDivider()),
             Expanded(
               child: Text(
-                "اسم السورة",
+                AppLocalizations.of(context)!.titleQuran,
                 style: theme.textTheme.titleMedium,
                 textAlign: TextAlign.center,
               ),
