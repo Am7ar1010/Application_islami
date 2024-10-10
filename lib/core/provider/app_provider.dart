@@ -21,7 +21,6 @@ class AppProvider extends ChangeNotifier {
         ? "assets/images/splashScreen.png"
         : "assets/images/splashScreen_dark.png";
   }
-
   String getBackgroundPathName() {
     return currentTheme == ThemeMode.light
         ? "assets/images/background.png"

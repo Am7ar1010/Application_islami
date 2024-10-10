@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var tapsView = [
     const QuranView(),
     const HadithView(),
-    const SebhaView(),
+    SebhaView(),
     const RadioView(),
     const SettingView(),
   ];
@@ -54,19 +54,22 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/quran.png")),
+                icon: const ImageIcon(AssetImage("assets/images/quran.png")),
                 label: AppLocalizations.of(context)!.quranTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/hadith icn.png")),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/hadith icn.png")),
                 label: AppLocalizations.of(context)!.hadithTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/sebha icn.png")),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/sebha icn.png")),
                 label: AppLocalizations.of(context)!.sebhaTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/radio_blue.png")),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/radio_blue.png")),
                 label: AppLocalizations.of(context)!.radioTep),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 label: AppLocalizations.of(context)!.settingsTep),
           ],
         ),

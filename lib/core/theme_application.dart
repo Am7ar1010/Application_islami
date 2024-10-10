@@ -5,11 +5,12 @@ class ApplicationTheme {
   static bool isDark = true;
   static ThemeData lightTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
-          onPrimary: const Color(0xff242424),
-          primary: const Color(0xffB7935F),
+        onPrimary: const Color(0xff242424),
+        primary: const Color(0xffB7935F),
         seedColor: const Color(0xff242424),
         secondary: const Color(0xffF8F8F8),
-          onSecondary: const Color(0xffF8F8F8)),
+        onSecondary: const Color(0xffF8F8F8),
+      ),
       textTheme: TextTheme(
         titleLarge: GoogleFonts.elMessiri(
             fontSize: 30,
@@ -80,11 +81,12 @@ class ApplicationTheme {
       ));
   static ThemeData darkTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
-          onPrimary: const Color(0xffFACC1D),
-          primary: const Color(0xffFACC1D),
-          seedColor: const Color(0xff141A2E),
-          secondary: const Color(0xffFFFFFF),
-          onSecondary: const Color(0xff141A2E)),
+        onPrimary: const Color(0xffFACC1D),
+        primary: const Color(0xffFACC1D),
+        seedColor: const Color(0xff141A2E),
+        secondary: const Color(0xffFFFFFF),
+        onSecondary: const Color(0xff141A2E),
+      ),
       textTheme: TextTheme(
         titleLarge: GoogleFonts.elMessiri(
             fontSize: 30,

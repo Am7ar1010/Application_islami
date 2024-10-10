@@ -10,8 +10,12 @@ import 'core/theme_application.dart';
 import 'ui/home/home_Screen.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => AppProvider(), child: IslamiApplication()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppProvider(),
+      child: const IslamiApplication(),
+    ),
+  );
 }
 
 class IslamiApplication extends StatelessWidget {
@@ -27,7 +31,7 @@ class IslamiApplication extends StatelessWidget {
       themeMode: appProvider.currentTheme,
       initialRoute: SplashScreen.routName,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en'), // English
         Locale('ar'),
       ],
@@ -35,8 +39,8 @@ class IslamiApplication extends StatelessWidget {
       routes: {
         SplashScreen.routName: (_) => const SplashScreen(),
         HomeScreen.routName: (_) => const HomeScreen(),
-        SuraDetails.routName: (_) => SuraDetails(),
-        HadithDetails.routName: (_) => const HadithDetails()
+        SuraDetails.routName: (_) => const SuraDetails(),
+        HadithDetails.routName: (_) => const HadithDetails(),
       },
     );
   }
