@@ -1,0 +1,17 @@
+{
+  "app_title": "اسلامي",
+  "quranTep": "قرأن",
+  "hadithTep": "حديث",
+  "sebhaTep": "سبحه",
+  "radioTep": "راديو",
+  "settingsTep": "الاعدادات",
+  "titleQuran": "اسم السوره",
+  "versionNumber": "رقم السوره",
+  "titleHadith": "الاحاديث",
+  "languageSetting": "اللغه",
+  "modeSetting": "النمط ",
+  "language_en": "الانجليزيه",
+  "language_ar": "العرابيه",
+  "mode_light": "نهار",
+  "mode_dark": "ليل"
+}

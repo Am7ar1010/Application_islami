@@ -1,4 +1,7 @@
+import 'package:application_testing/core/provider/app_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 import '../teps/hadith tep/hadith view.dart';
 import '../teps/quran tep/quran view.dart';
@@ -20,20 +23,27 @@ class _HomeScreenState extends State<HomeScreen> {
   var tapsView = [
     const QuranView(),
     const HadithView(),
-    const SebhaView(),
+    SebhaView(),
     const RadioView(),
     const SettingView(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    var appProvider = Provider.of<AppProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/background.png"))),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            appProvider.getBackgroundPathName(),
+          ),
+        ),
+      ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("islami"),
+          title: Text(
+            AppLocalizations.of(context)!.app_title,
+          ),
         ),
         body: tapsView[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -42,21 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = index;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/quran.png")),
-                label: "Quran"),
+                icon: const ImageIcon(AssetImage("assets/images/quran.png")),
+                label: AppLocalizations.of(context)!.quranTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/hadith icn.png")),
-                label: "Hadith"),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/hadith icn.png")),
+                label: AppLocalizations.of(context)!.hadithTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/sebha icn.png")),
-                label: "Sebha"),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/sebha icn.png")),
+                label: AppLocalizations.of(context)!.sebhaTep),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/radio_blue.png")),
-                label: "Radio"),
+                icon:
+                    const ImageIcon(AssetImage("assets/images/radio_blue.png")),
+                label: AppLocalizations.of(context)!.radioTep),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Settings"),
+                icon: const Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settingsTep),
           ],
         ),
       ),

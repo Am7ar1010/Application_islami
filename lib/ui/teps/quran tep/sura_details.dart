@@ -1,6 +1,8 @@
+import 'package:application_testing/core/provider/app_provider.dart';
 import 'package:application_testing/ui/teps/quran%20tep/quran%20view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routName = "suraDetails";
@@ -16,6 +18,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var appProvider = Provider.of<AppProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsFiles;
     readFiles(args.detailsSuraNumber);
 
@@ -23,9 +26,13 @@ class _SuraDetailsState extends State<SuraDetails> {
     double height = MediaQuery.of(context).size.height;
     double wight = MediaQuery.of(context).size.width;
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/background.png"))),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            appProvider.getBackgroundPathName(),
+          ),
+        ),
+      ),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Islami"),
@@ -42,7 +49,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                   width: double.infinity,
                   height: height * 0.8,
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.secondary.withOpacity(0.8),
+                    color: theme.colorScheme.onSecondary.withOpacity(0.8),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
@@ -52,13 +59,17 @@ class _SuraDetailsState extends State<SuraDetails> {
                         children: [
                           Text(
                             "سورة ${args.detailsSuraName}",
-                            style: theme.textTheme.titleSmall,
+                            style: theme.textTheme.titleSmall!
+                                .copyWith(color: theme.colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(
                             width: wight * 0.04,
                           ),
-                          const Icon(Icons.play_circle),
+                          Icon(
+                            Icons.play_circle,
+                            color: theme.colorScheme.onPrimary,
+                          ),
                         ],
                       ),
                       const Divider(
@@ -70,7 +81,8 @@ class _SuraDetailsState extends State<SuraDetails> {
                           itemCount: 1,
                           itemBuilder: (context, index) => Text(
                             content,
-                            style: theme.textTheme.bodySmall,
+                            style: theme.textTheme.bodySmall!
+                                .copyWith(color: theme.colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                           ),
                         ),
